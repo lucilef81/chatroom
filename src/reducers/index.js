@@ -1,4 +1,5 @@
 import { ADD_MESSAGE, MODIFY_MESSAGE } from 'src/actions';
+import { getNextId } from 'src/selectors';
 
 const initialState = {
   newMessageValue: '',
@@ -31,7 +32,7 @@ const reducer = (state = initialState, action = {}) => {
     case ADD_MESSAGE: {
       // je déclare un noubel objet message
       const aNewMessage = {
-        id: 5,
+        id: getNextId(state.messages),
         author: 'Super chat',
         content: state.newMessageValue,
       };
