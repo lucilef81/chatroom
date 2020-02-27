@@ -24,6 +24,18 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 1rem;
+  scroll-behavior: smooth;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .message {
@@ -33,9 +45,22 @@ body {
 .message-content {
   padding: 1rem;
   background-color: white;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   display: inline-block;
   border-radius: 2rem;
+  position:relative;
+  min-width: 100px;
+  animation: pop 0.3s cubic-bezier(.48,1.7,.87,1);
+}
+
+.message-content::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 2rem;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 10px solid white;
 }
 
 #form {
@@ -50,8 +75,11 @@ body {
 #form input {
   width: 100%;
   padding: 1rem 2rem;
+  border: 0;
 }
 
 #form button {
   width: 80px;
+  background: none;
+  border: 0;
 }

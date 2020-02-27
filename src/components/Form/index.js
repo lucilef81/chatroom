@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { Send } from 'react-feather';
 
 const Form = ({ addMessage, value, changeValue }) => {
   const inputElement = useRef(null);
@@ -23,7 +24,9 @@ const Form = ({ addMessage, value, changeValue }) => {
         onChange={handleChange}
         ref={inputElement}
       />
-      <button type="submit">&gt;</button>
+      <button type="submit">
+        <Send color="#123456" />
+      </button>
     </form>
   );
 };
