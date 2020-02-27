@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Form = ({ addMessage, value }) => {
+const Form = ({ addMessage, value, changeValue }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addMessage();
+  };
+  const handleChange = (event) => {
+    changeValue(event.target.value);
   };
   return (
     <form onSubmit={handleSubmit} id="form">
@@ -12,6 +15,7 @@ const Form = ({ addMessage, value }) => {
         value={value}
         type="text"
         placeholder="Saisissez votre message ..."
+        onChange={handleChange}
       />
       <button type="submit">&gt;</button>
     </form>
@@ -21,6 +25,7 @@ const Form = ({ addMessage, value }) => {
 Form.propTypes = {
   addMessage: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
+  changeValue: PropTypes.func.isRequired,
 };
 
 export default Form;

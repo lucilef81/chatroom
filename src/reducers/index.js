@@ -1,7 +1,7 @@
-import { ADD_MESSAGE } from 'src/actions';
+import { ADD_MESSAGE, MODIFY_MESSAGE } from 'src/actions';
 
 const initialState = {
-  newMessageValue: 'salut',
+  newMessageValue: '',
   messages: [
     {
       id: 1,
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action = {}) => {
       const aNewMessage = {
         id: 5,
         author: 'Super chat',
-        content: 'un message',
+        content: state.newMessageValue,
       };
       // je déclare une nouvelle liste de messages avec les messages actuels et le nouveau
       const newMessages = [
@@ -46,6 +46,11 @@ const reducer = (state = initialState, action = {}) => {
         messages: newMessages,
       };
     }
+    case MODIFY_MESSAGE:
+      return {
+        ...state,
+        newMessageValue: action.content,
+      };
     default:
       return state;
   }
