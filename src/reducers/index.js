@@ -1,4 +1,7 @@
+import { ADD_MESSAGE } from 'src/actions';
+
 const initialState = {
+  newMessageValue: 'message initial',
   messages: [
     {
       id: 1,
@@ -25,6 +28,24 @@ const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case ADD_MESSAGE: {
+      // je déclare un noubel objet message
+      const aNewMessage = {
+        id: 5,
+        author: 'Super chat',
+        content: state.message,
+      };
+      // je déclare une nouvelle liste de messages avec les messages actuels et le nouveau
+      const newMessages = [
+        ...state.messages,
+        aNewMessage,
+      ];
+      // je retourne un nouveau state avec ce qu'il contenait déjà et ma nouvelle liste de message
+      return {
+        ...state,
+        messages: newMessages,
+      };
+    }
     default:
       return state;
   }
