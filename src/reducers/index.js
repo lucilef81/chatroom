@@ -15,6 +15,11 @@ const initialState = {
       author: 'Super chat',
       content: 'a+',
     },
+    {
+      id: 4,
+      author: 'Super chat',
+      content: 'Bisous !',
+    },
   ],
 };
 
