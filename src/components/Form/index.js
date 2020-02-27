@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Form = () => (
-  <form>
+  <form id="form">
     <input
       type="text"
       placeholder="Saisissez votre message ..."
