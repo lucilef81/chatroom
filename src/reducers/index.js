@@ -1,7 +1,7 @@
 import { ADD_MESSAGE } from 'src/actions';
 
 const initialState = {
-  newMessageValue: 'message initial',
+  newMessageValue: 'salut',
   messages: [
     {
       id: 1,
@@ -33,7 +33,7 @@ const reducer = (state = initialState, action = {}) => {
       const aNewMessage = {
         id: 5,
         author: 'Super chat',
-        content: state.message,
+        content: 'un message',
       };
       // je déclare une nouvelle liste de messages avec les messages actuels et le nouveau
       const newMessages = [

@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 import Form from 'src/components/Form';
 import { addMessage } from 'src/actions';
 
-const mapStateToProps = null;
+const mapStateToProps = (state) => ({
+  value: state.newMessageValue,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addMessage: () => {
