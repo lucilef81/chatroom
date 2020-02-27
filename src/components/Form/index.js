@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const Form = ({ addMessage, value, changeValue }) => {
+  const inputElement = useRef(null);
+  useEffect(() => {
+    inputElement.current.focus();
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     addMessage();
@@ -16,6 +21,7 @@ const Form = ({ addMessage, value, changeValue }) => {
         type="text"
         placeholder="Saisissez votre message ..."
         onChange={handleChange}
+        ref={inputElement}
       />
       <button type="submit">&gt;</button>
     </form>
