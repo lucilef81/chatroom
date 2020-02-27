@@ -44,6 +44,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         messages: newMessages,
+        newMessageValue: '',
       };
     }
     case MODIFY_MESSAGE:
