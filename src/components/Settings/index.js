@@ -3,13 +3,11 @@ import { PlusCircle } from 'react-feather';
 import PropTypes from 'prop-types';
 
 const Settings = ({ open, toggleForm }) => (
-  <div className="settings">
+  <div className={open ? 'settings' : 'settings settings--closed'}>
     <button onClick={toggleForm} className="settings-button" type="button">
       <PlusCircle />
     </button>
-    {open && (
-      <div className="settings-form">*LoginForm*</div>
-    )}
+    <div className="settings-form">*LoginForm*</div>
   </div>
 );
 

@@ -87,8 +87,9 @@ body {
 .settings {
   position: fixed;
   z-index: 2;
-  right: 1rem;
+  right: 0;
   top: 1rem;
+  transition: transform 0.3s ease-in-out;
 }
 
 .settings-button {  
@@ -97,9 +98,19 @@ body {
   background: transparent;
   border:0;
   color: #0099ff;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.settings--closed .settings-button {
+  transform: rotate(0);
 }
 
 .settings-form {
   background-color: white;
   padding: 2rem;
+}
+
+.settings--closed {
+  transform: translateX(100%);
 }
