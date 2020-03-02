@@ -2,6 +2,7 @@ import {
   ADD_MESSAGE,
   MODIFY_MESSAGE,
   TOGGLE_OPEN,
+  CHANGE_VALUE,
 } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
@@ -67,6 +68,14 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         open: !state.open,
+      };
+    case CHANGE_VALUE:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          email: 'alexis@oclock.io',
+        },
       };
     default:
       return state;

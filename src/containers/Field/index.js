@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // == Imports locaux
 // composant + actions creator
 import Field from 'src/components/Field';
+import { changeValue } from 'src/actions';
 
 // == Branchements
 // lecture
@@ -14,8 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
 // modification
 const mapDispatchToProps = (dispatch) => ({
   changeValue: (value, name) => {
-    console.log('je veux changer le state', value, name);
-    dispatch({ type: 'CHANGE_VALUE' });
+    dispatch(changeValue());
   },
 });
 
