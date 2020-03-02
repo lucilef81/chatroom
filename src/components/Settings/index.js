@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Settings = ({ open }) => (
   <div className="settings">
-    <button className="settings-button" type="button">
+    <button onClick={() => { console.log('je veux faire qqch'); }} className="settings-button" type="button">
       <PlusCircle />
     </button>
     {open && (
