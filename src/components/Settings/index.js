@@ -2,7 +2,7 @@ import React from 'react';
 import { PlusCircle } from 'react-feather';
 import PropTypes from 'prop-types';
 
-import SettingsForm from './SettingsForm';
+import SettingsForm from 'src/containers/Settings/SettingsForm';
 
 const Settings = ({ open, toggleForm }) => (
   <div className={open ? 'settings' : 'settings settings--closed'}>

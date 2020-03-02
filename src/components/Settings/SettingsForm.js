@@ -1,22 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import axios from 'axios';
 
 import Field from 'src/containers/Field';
 
-const SettingsForm = () => {
+const SettingsForm = ({ login }) => {
   const handleSubmit = (event) => {
-    console.log('je veux me connecter');
     event.preventDefault();
-    axios.post('http://localhost:3001/login', {
-      email: 'captain.sportsextremes@herocorp.io',
-      password: 'pingpong',
-    })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    login();
+    // axios.post('http://localhost:3001/login', {
+    //   email: 'captain.sportsextremes@herocorp.io',
+    //   password: 'pingpong',
+    // })
+    //   .then((response) => {
+    //     console.log(response);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
   return (
     <form onSubmit={handleSubmit} className="settings-form">
@@ -25,6 +27,10 @@ const SettingsForm = () => {
       <button type="submit">Se connecter</button>
     </form>
   );
+};
+
+SettingsForm.propTypes = {
+  login: PropTypes.func.isRequired,
 };
 
 export default SettingsForm;

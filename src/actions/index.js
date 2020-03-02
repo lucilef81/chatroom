@@ -3,6 +3,7 @@ export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const MODIFY_MESSAGE = 'MODIFY_MESSAGE';
 export const TOGGLE_OPEN = 'TOGGLE_OPEN';
 export const CHANGE_VALUE = 'CHANGE_VALUE';
+export const LOGIN = 'LOGIN';
 
 // == action creators
 export const addMessage = () => ({
@@ -22,4 +23,8 @@ export const changeValue = (value, key) => ({
   type: CHANGE_VALUE,
   value,
   key,
+});
+
+export const login = () => ({
+  type: LOGIN,
 });
