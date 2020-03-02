@@ -6,6 +6,7 @@ import {
   CHANGE_PSEUDO,
   CONTAIN_ERROR,
   LOGIN,
+  GET_THEME,
 } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
@@ -42,6 +43,7 @@ const initialState = {
       content: 'Bisous !',
     },
   ],
+  theme: '',
 };
 
 // reducer = traducteur d'une intention/action vers une modification du state
@@ -56,10 +58,7 @@ const reducer = (state = initialState, action = {}) => {
         content: state.newMessageValue,
       };
       // je déclare une nouvelle liste de messages avec les messages actuels et le nouveau
-      const newMessages = [
-        ...state.messages,
-        aNewMessage,
-      ];
+      const newMessages = [...state.messages, aNewMessage];
       // je retourne un nouveau state avec ce qu'il contenait déjà et ma nouvelle liste de message
       return {
         ...state,
@@ -107,6 +106,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loading: true,
+      };
+    case GET_THEME:
+      return {
+        ...state,
+        theme: action.payload,
       };
     default:
       return state;
