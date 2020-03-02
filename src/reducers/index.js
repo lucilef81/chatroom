@@ -39,6 +39,7 @@ const initialState = {
 
 // reducer = traducteur d'une intention/action vers une modification du state
 const reducer = (state = initialState, action = {}) => {
+  console.log('REDUCER :', action);
   switch (action.type) {
     case ADD_MESSAGE: {
       // je déclare un noubel objet message

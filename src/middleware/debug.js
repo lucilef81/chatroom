@@ -8,8 +8,9 @@ const debug = (store) => (next) => (action) => {
     - next : la fonction qui dit explicitement si on laisse passer ou non une action, si on n'appelle pas next(action) dans le middleware l'action n'arrive pas au middleware/reducer suivant, si on l'appelle l'action passe au middleware/reducer suivant
     - action : l'objet action, l'intention qu'on a intercépté et qu'on va potentielement traduire
   */
-  console.log('je passe dans mon middleware');
-  // next(action);
+  console.log('DEBUG MIDDLEWARE :', action);
+  // si je veux laisser passer l'action je mets :
+  next(action);
 };
 
 export default debug;
