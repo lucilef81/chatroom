@@ -21,6 +21,7 @@ body {
   top: 0;
   bottom: 80px;
   background-color: #abcdef;
+  color: #000;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 1rem;
@@ -48,9 +49,9 @@ body {
   margin-top: 1rem;
   display: inline-block;
   border-radius: 2rem;
-  position:relative;
+  position: relative;
   min-width: 100px;
-  animation: pop 0.3s cubic-bezier(.48,1.7,.87,1);
+  animation: pop 0.3s cubic-bezier(0.48, 1.7, 0.87, 1);
 }
 
 .message-content::before {
@@ -92,11 +93,11 @@ body {
   transition: transform 0.3s ease-in-out;
 }
 
-.settings-button {  
+.settings-button {
   position: absolute;
   left: -40px;
   background: transparent;
-  border:0;
+  border: 0;
   color: #0099ff;
   transform: rotate(45deg);
   transition: transform 0.3s ease-in-out;

@@ -7,8 +7,9 @@ import Messages from 'src/components/Messages';
 
 // == Branchements
 // lecture
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   messages: state.messages,
+  theme: state.theme,
 });
 
 // modification
