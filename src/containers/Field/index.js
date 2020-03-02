@@ -7,8 +7,8 @@ import Field from 'src/components/Field';
 
 // == Branchements
 // lecture
-const mapStateToProps = (state) => ({
-  toto: 123,
+const mapStateToProps = (state, ownProps) => ({
+  value: state.user[ownProps.inputName],
 });
 
 // modification
