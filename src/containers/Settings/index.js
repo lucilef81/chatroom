@@ -14,7 +14,7 @@ const mapStateToProps = (state) => ({
 // modification
 const mapDispatchToProps = (dispatch) => ({
   toggleForm: () => {
-    console.log('je veux afficher ou masquer le form');
+    dispatch({ type: 'TOGGLE_OPEN' });
   },
 });
 
