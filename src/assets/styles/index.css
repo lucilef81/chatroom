@@ -83,3 +83,23 @@ body {
   background: none;
   border: 0;
 }
+
+.settings {
+  position: fixed;
+  z-index: 2;
+  right: 1rem;
+  top: 1rem;
+}
+
+.settings-button {  
+  position: absolute;
+  left: -40px;
+  background: transparent;
+  border:0;
+  color: #0099ff;
+}
+
+.settings-form {
+  background-color: white;
+  padding: 2rem;
+}
