@@ -1,4 +1,8 @@
-import { ADD_MESSAGE, MODIFY_MESSAGE } from 'src/actions';
+import { 
+  ADD_MESSAGE,
+  MODIFY_MESSAGE,
+  TOGGLE_OPEN,
+} from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
@@ -28,6 +32,7 @@ const initialState = {
   ],
 };
 
+// reducer = traducteur d'une intention/action vers une modification du state
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case ADD_MESSAGE: {
@@ -53,6 +58,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         newMessageValue: action.content,
+      };
+    case TOGGLE_OPEN:
+      return {
+        ...state,
+        open: !state.open,
       };
     default:
       return state;
