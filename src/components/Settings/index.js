@@ -2,9 +2,9 @@ import React from 'react';
 import { PlusCircle } from 'react-feather';
 import PropTypes from 'prop-types';
 
-const Settings = ({ open }) => (
+const Settings = ({ open, toggleForm }) => (
   <div className="settings">
-    <button onClick={() => { console.log('je veux faire qqch'); }} className="settings-button" type="button">
+    <button onClick={toggleForm} className="settings-button" type="button">
       <PlusCircle />
     </button>
     {open && (
@@ -15,6 +15,7 @@ const Settings = ({ open }) => (
 
 Settings.propTypes = {
   open: PropTypes.bool.isRequired,
+  toggleForm: PropTypes.func.isRequired,
 };
 
 export default Settings;

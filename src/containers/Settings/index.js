@@ -12,10 +12,11 @@ const mapStateToProps = (state) => ({
 });
 
 // modification
-const mapDispatchToProps = {};
-// const mapDispatchToProps = (dispatch) => ({
-//   toto: () => {},
-// });
+const mapDispatchToProps = (dispatch) => ({
+  toggleForm: () => {
+    console.log('je veux afficher ou masquer le form');
+  },
+});
 
 // Export du retour de connect = le composant enrichi de props
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);
