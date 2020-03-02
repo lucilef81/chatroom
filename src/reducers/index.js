@@ -1,4 +1,4 @@
-import { 
+import {
   ADD_MESSAGE,
   MODIFY_MESSAGE,
   TOGGLE_OPEN,
@@ -6,7 +6,11 @@ import {
 import { getNextId } from 'src/selectors';
 
 const initialState = {
-  open: false,
+  user: {
+    email: 'toto',
+    password: '123',
+  },
+  open: true,
   newMessageValue: '',
   messages: [
     {
