@@ -2,7 +2,7 @@ import { ADD_MESSAGE, MODIFY_MESSAGE } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
-  open: true,
+  open: false,
   newMessageValue: '',
   messages: [
     {

@@ -8,7 +8,7 @@ import Settings from 'src/components/Settings';
 // == Branchements
 // lecture
 const mapStateToProps = (state) => ({
-  toto: 123,
+  open: state.open,
 });
 
 // modification
