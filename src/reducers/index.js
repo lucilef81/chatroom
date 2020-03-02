@@ -8,8 +8,8 @@ import { getNextId } from 'src/selectors';
 
 const initialState = {
   user: {
-    email: 'toto@toto.com',
-    password: '123',
+    email: '',
+    password: '',
   },
   open: true,
   newMessageValue: '',
