@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // == Imports locaux
 // composant + actions creator
 import Settings from 'src/components/Settings';
+import { toggleOpen } from 'src/actions';
 
 // == Branchements
 // lecture
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => ({
 // modification
 const mapDispatchToProps = (dispatch) => ({
   toggleForm: () => {
-    dispatch({ type: 'TOGGLE_OPEN' });
+    dispatch(toggleOpen());
   },
 });
 
