@@ -74,7 +74,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         user: {
           ...state.user,
-          email: 'alexis@oclock.io',
+          [action.key]: action.value,
         },
       };
     default:

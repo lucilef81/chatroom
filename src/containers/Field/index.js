@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
 // modification
 const mapDispatchToProps = (dispatch) => ({
   changeValue: (value, name) => {
-    dispatch(changeValue());
+    dispatch(changeValue(value, name));
   },
 });
 

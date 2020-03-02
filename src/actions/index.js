@@ -18,6 +18,8 @@ export const toggleOpen = () => ({
   type: TOGGLE_OPEN,
 });
 
-export const changeValue = () => ({
+export const changeValue = (value, key) => ({
   type: CHANGE_VALUE,
+  value,
+  key,
 });
