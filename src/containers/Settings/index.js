@@ -10,6 +10,9 @@ import { toggleOpen } from 'src/actions';
 // lecture
 const mapStateToProps = (state) => ({
   open: state.open,
+  logged: state.logged,
+  hasError: state.hasError,
+  loading: state.loading,
 });
 
 // modification

@@ -3,15 +3,22 @@ import {
   MODIFY_MESSAGE,
   TOGGLE_OPEN,
   CHANGE_VALUE,
+  CHANGE_PSEUDO,
+  CONTAIN_ERROR,
+  LOGIN,
 } from 'src/actions';
 import { getNextId } from 'src/selectors';
 
 const initialState = {
+  hasError: false,
+  logged: false,
+  loading: false,
   user: {
     email: '',
     password: '',
+    pseudo: 'Anonyme',
   },
-  open: true,
+  open: false,
   newMessageValue: '',
   messages: [
     {
@@ -45,7 +52,7 @@ const reducer = (state = initialState, action = {}) => {
       // je déclare un noubel objet message
       const aNewMessage = {
         id: getNextId(state.messages),
-        author: 'Super chat',
+        author: state.user.pseudo,
         content: state.newMessageValue,
       };
       // je déclare une nouvelle liste de messages avec les messages actuels et le nouveau
@@ -77,6 +84,29 @@ const reducer = (state = initialState, action = {}) => {
           ...state.user,
           [action.key]: action.value,
         },
+      };
+    case CHANGE_PSEUDO:
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          pseudo: action.pseudo,
+        },
+        open: false,
+        logged: true,
+        hasError: false,
+        loading: false,
+      };
+    case CONTAIN_ERROR:
+      return {
+        ...state,
+        hasError: true,
+        loading: false,
+      };
+    case LOGIN:
+      return {
+        ...state,
+        loading: true,
       };
     default:
       return state;

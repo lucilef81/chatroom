@@ -1,22 +1,30 @@
 import axios from 'axios';
 
-import { LOGIN } from 'src/actions';
+import { LOGIN, changePseudo, containError } from 'src/actions';
 
 const auth = (store) => (next) => (action) => {
   switch (action.type) {
-    case LOGIN:
-      console.log('AUTH MIDDLEWARE: login passe, je court-circuite');
+    case LOGIN: {
+      console.log('AUTH MIDDLEWARE: login passe');
+      // + on traduit l'intention LOGIN en intérrogeant notre API
+      // je vais avoir besoin de lire le state pour faire ma requete
+      const state = store.getState();
       axios.post('http://localhost:3001/login', {
-        email: 'captain.sportsextremes@herocorp.io',
-        password: 'pingpong',
+        email: state.user.email,
+        password: state.user.password,
       })
         .then((response) => {
-          console.log(response);
+          // quand on a la réponse, on veut modifier le pseudo dans l'état
+          // je vais vouloir émettre une intention pour modifier le state
+          store.dispatch(changePseudo(response.data));
         })
         .catch((error) => {
-          console.log(error);
+          store.dispatch(containError());
         });
+      // je laisse passer tout de suite au middleware/reducer suivant
+      next(action);
       break;
+    }
     default:
       console.log('AUTH MIDDLEWARE: ', action, 'passe, je laisse paser');
       next(action);
