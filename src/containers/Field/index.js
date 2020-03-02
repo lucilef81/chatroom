@@ -13,7 +13,10 @@ const mapStateToProps = (state, ownProps) => ({
 
 // modification
 const mapDispatchToProps = (dispatch) => ({
-  //
+  changeValue: (value, name) => {
+    console.log('je veux changer le state', value, name);
+    dispatch({ type: 'CHANGE_VALUE' });
+  },
 });
 
 // Export du retour de connect = le composant enrichi de props
